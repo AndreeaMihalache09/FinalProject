@@ -1,8 +1,8 @@
 package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-public class CheckboxDemo extends BasePage{
-    public CheckboxDemo(WebDriver driver){
+public class CheckboxDemoPage extends BasePage{
+    public CheckboxDemoPage(WebDriver driver){
         super(driver);
 }
     By SingleCheckBox = By.id("isAgeSelected");
