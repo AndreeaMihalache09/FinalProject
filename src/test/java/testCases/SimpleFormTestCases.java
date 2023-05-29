@@ -43,9 +43,9 @@ public class SimpleFormTestCases extends BasePage {
     @Test
     public void writeSpecialCharactersInSingleInputFieldThenClickOnTheGetCheckedValueButton() throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[1]/a")).click();
-        simpleFormPage.selectTextField("+*/=?/");
+        simpleFormPage.selectTextField("+*/=?/)-?!@");
         simpleFormPage.clickOnGetCheckedValue();
-        Assert.assertTrue(driver.getPageSource().contains("+*/=?/"));
+        Assert.assertTrue(driver.getPageSource().contains("+*/=?/)-?!@"));
     }
 
     @Test
@@ -91,15 +91,18 @@ public class SimpleFormTestCases extends BasePage {
         simpleFormPage.selectTwoFieldsEnterB("*/./*");
         simpleFormPage.clickGetValuesButton();
         Assert.assertTrue(driver.getPageSource().contains("NaN"));
-    }
 
+    }
     @Test
     public void CheckIfTheSumOfTwoNumbersIsCorrect() throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[1]/a")).click();
         simpleFormPage.selectTwoFieldsEnterA("45");
         simpleFormPage.selectTwoFieldsEnterB("14");
         simpleFormPage.clickGetValuesButton();
-        WebElement Sum = driver.findElement(By.xpath("//p[@id=\"addmessage\" and text()=\"59\"]"));
-        Assert.assertEquals(true, Sum.isDisplayed());
+        WebElement Sum = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/div/p"));
+        String SumResult = Sum.getText();
+        Assert.assertTrue(SumResult.contains("59"));
+
     }
+
 }

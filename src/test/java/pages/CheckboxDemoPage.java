@@ -7,6 +7,9 @@ public class CheckboxDemoPage extends BasePage{
 }
     By SingleCheckBox = By.id("isAgeSelected");
     public void clickOnSingleCheckBox(){ driver.findElement(SingleCheckBox).click();}
+    By  CheckAllButton = By.id("box");
+    public void clickOnCheckAllButton(){driver.findElement(CheckAllButton).click();}
+
     By MultipleCheckBoxOption1 = By.id("ex1-check1");
     public void clickOnMultipleCheckBoxOption1(){ driver.findElement(MultipleCheckBoxOption1).click();}
     By MultipleCheckBoxOption2 = By.id("ex1-check2");
