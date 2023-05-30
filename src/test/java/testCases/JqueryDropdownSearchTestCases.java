@@ -164,4 +164,41 @@ public class JqueryDropdownSearchTestCases extends BasePage {
         Assert.assertTrue(TextDisplayed2.contains("Alaska"));
         Assert.assertTrue(TextDisplayed3.contains("Delaware"));
     }
+
+    //Drop Down with Disabled values
+    @Test
+    public void NoSelectAnyValue() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        WebElement SelectBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[3]/div[2]/span/span[1]/span/span[1]"));
+        String TextDisplayed = SelectBox.getText();
+        Assert.assertTrue(TextDisplayed.contains("Puerto Rico"));
+    }
+
+    @Test
+    public void SelectAmericanSamoaValue() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnSelectionArrow();
+        jqueryDropdownSearchPage.ClickOnAmericanSamoaValue();
+        WebElement SelectBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[3]/div[2]/span/span[1]/span/span[1]"));
+        String TextDisplayed = SelectBox.getText();
+        Assert.assertTrue(TextDisplayed.contains("American Samoa"));
+    }
+    @Test
+    public void CheckGuamDisabledValue() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnSelectionArrow();
+        WebElement UnableButton = driver.findElement(By.xpath("/html/body/span/span/span[2]/ul/li[3]"));
+        Assert.assertFalse(UnableButton.isEnabled();
+
+    }
+    @Test
+    public void SelectNorthernMarianaIslandsValue() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnSelectionArrow();
+        jqueryDropdownSearchPage.ClickOnNorthernMarianaIslandsValue();
+        WebElement SelectBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[3]/div[2]/span/span[1]/span/span[1]"));
+        String TextDisplayed = SelectBox.getText();
+        Assert.assertTrue(TextDisplayed.contains("Northern Mariana Islands"));
+    }
+
 }

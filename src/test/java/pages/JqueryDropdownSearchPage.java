@@ -88,5 +88,24 @@ public class JqueryDropdownSearchPage extends BasePage {
     By Delaware = By.xpath("/html/body/span/span/span/ul/li[8]");
     public void ClickDelawareInSelectStateField(){driver.findElement(Delaware).click();}
 
+    //Drop Down with Disabled values
+    By SelectionArrow = By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[3]/div[2]/span/span[1]/span/span[2]");
+    public void ClickOnSelectionArrow (){driver.findElement(SelectionArrow).click();}
 
+    By PuertoRicoValue = By.xpath("/html/body/span/span/span[2]/ul/li[1]");
+    public void ClickOnPuertoRicoValue(){driver.findElement(PuertoRicoValue).click();}
+
+    By AmericanSamoaValue = By.xpath("/html/body/span/span/span[2]/ul/li[2]");
+    public void ClickOnAmericanSamoaValue(){driver.findElement(AmericanSamoaValue).click();}
+
+    By GuamDisabledValue = By.xpath("/html/body/span/span/span[2]/ul/li[3]");
+    public void ClickOnGuamDisabledValue(){driver.findElement(GuamDisabledValue).click();}
+
+    By NorthernMarianaIslandsValue = By.xpath("/html/body/span/span/span[2]/ul/li[4]");
+    public void ClickOnNorthernMarianaIslandsValue(){driver.findElement(NorthernMarianaIslandsValue).click();}
+
+    By UnitedStatesMinorOutlyingIslandsDisabledValue = By.xpath("/html/body/span/span/span[2]/ul/li[5]");
+    public void ClickOnUnitedStatesMinorOutlyingIslandsDisabledValue(){driver.findElement(UnitedStatesMinorOutlyingIslandsDisabledValue).click();}
+    By VirginIslandsValue = By.xpath("/html/body/span/span/span[2]/ul/li[4]");
+    public void ClickOnVirginIslandsValue(){driver.findElement(VirginIslandsValue).click();}
 }
