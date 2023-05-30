@@ -183,14 +183,16 @@ public class JqueryDropdownSearchTestCases extends BasePage {
         String TextDisplayed = SelectBox.getText();
         Assert.assertTrue(TextDisplayed.contains("American Samoa"));
     }
+
     @Test
     public void CheckGuamDisabledValue() {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectionArrow();
         WebElement UnableButton = driver.findElement(By.xpath("/html/body/span/span/span[2]/ul/li[3]"));
-        Assert.assertFalse(UnableButton.isEnabled();
-
+        boolean isButtonDisabled = UnableButton.getAttribute("aria-disabled").equals("true");
+        Assert.assertTrue(isButtonDisabled, "The unableButton should be disabled");
     }
+
     @Test
     public void SelectNorthernMarianaIslandsValue() {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
@@ -201,4 +203,110 @@ public class JqueryDropdownSearchTestCases extends BasePage {
         Assert.assertTrue(TextDisplayed.contains("Northern Mariana Islands"));
     }
 
+    @Test
+    public void CheckUnitedStatesMinorOutlyingIslandsDisabledValue() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnSelectionArrow();
+        WebElement UnableButton = driver.findElement(By.xpath("/html/body/span/span/span[2]/ul/li[5]"));
+        boolean isButtonDisabled = UnableButton.getAttribute("aria-disabled").equals("true");
+        Assert.assertTrue(isButtonDisabled, "The unabledButton should be disabled");
+    }
+
+    @Test
+    public void SelectVirginIslandsValue() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnSelectionArrow();
+        jqueryDropdownSearchPage.ClickOnVirginIslandsValue();
+        WebElement SelectBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[3]/div[2]/span/span[1]/span/span[1]"));
+        String TextDisplayed = SelectBox.getText();
+        Assert.assertTrue(TextDisplayed.contains("Virgin Islands"));
+    }
+
+    //Drop-down with Category related options
+    @Test
+    public void SelectNoOptionInDropdownList() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
+        String TextDisplayed = (Text.getText());
+        Assert.assertTrue(TextDisplayed.contains("PHP"));
+    }
+
+    @Test
+    public void SelectOption2InDropdownList() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
+        jqueryDropdownSearchPage.SelectAnOption("P");
+        jqueryDropdownSearchPage.ClickOutside();
+        WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
+        String TextDisplayed = (Text.getText());
+        Assert.assertTrue(TextDisplayed.contains("Python"));
+
+    }
+
+    @Test
+    public void SelectOption3InDropdownList() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
+        jqueryDropdownSearchPage.SelectAnOption("R");
+        jqueryDropdownSearchPage.ClickOutside();
+        WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
+        String TextDisplayed = (Text.getText());
+        Assert.assertTrue(TextDisplayed.contains("Ruby"));
+
+    }
+    @Test
+    public void SelectOption4InDropdownList() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
+        jqueryDropdownSearchPage.SelectAnOption("C");
+        jqueryDropdownSearchPage.ClickOutside();
+        WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
+        String TextDisplayed = (Text.getText());
+        Assert.assertTrue(TextDisplayed.contains("C"));
+
+    }
+    @Test
+    public void SelectOption5InDropdownList() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
+        jqueryDropdownSearchPage.SelectAnOption("J");
+        jqueryDropdownSearchPage.ClickOutside();
+        WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
+        String TextDisplayed = (Text.getText());
+        Assert.assertTrue(TextDisplayed.contains("Java"));
+
+    }
+    @Test
+    public void SelectOption6InDropdownList() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
+        jqueryDropdownSearchPage.SelectAnOption(".");
+        jqueryDropdownSearchPage.ClickOutside();
+        WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
+        String TextDisplayed = (Text.getText());
+        Assert.assertTrue(TextDisplayed.contains(".Net"));
+
+    }
+    @Test
+    public void SelectOption7InDropdownList() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
+        jqueryDropdownSearchPage.SelectAnOption("U");
+        jqueryDropdownSearchPage.ClickOutside();
+        WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
+        String TextDisplayed = (Text.getText());
+        Assert.assertTrue(TextDisplayed.contains("Unknown Script"));
+
+    }
+    @Test
+    public void SelectOption8InDropdownList() {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
+        jqueryDropdownSearchPage.SelectAnOption("O");
+        jqueryDropdownSearchPage.ClickOutside();
+        WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
+        String TextDisplayed = (Text.getText());
+        Assert.assertTrue(TextDisplayed.contains("Other file"));
+
+    }
 }

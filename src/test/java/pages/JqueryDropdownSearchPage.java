@@ -106,6 +106,15 @@ public class JqueryDropdownSearchPage extends BasePage {
 
     By UnitedStatesMinorOutlyingIslandsDisabledValue = By.xpath("/html/body/span/span/span[2]/ul/li[5]");
     public void ClickOnUnitedStatesMinorOutlyingIslandsDisabledValue(){driver.findElement(UnitedStatesMinorOutlyingIslandsDisabledValue).click();}
-    By VirginIslandsValue = By.xpath("/html/body/span/span/span[2]/ul/li[4]");
+    By VirginIslandsValue = By.xpath("/html/body/span/span/span[2]/ul/li[6]");
     public void ClickOnVirginIslandsValue(){driver.findElement(VirginIslandsValue).click();}
+
+    //Drop-down with Category related options
+
+    By OtherFileDropdown = By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select");
+    public void ClickOnOtherFileDropdown(){driver.findElement(OtherFileDropdown).click();}
+    public void SelectAnOption(String arg1) {driver.findElement(OtherFileDropdown).sendKeys(arg1);}
+    By OutsideDropdown = By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[1]");
+    public void ClickOutside(){driver.findElement(OutsideDropdown).click();}
+
 }
