@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.BasePage;
-import pages.CheckboxDemoPage;
 import pages.RadioButtonPage;
 public class RadioButtonTestCases extends BasePage {
     private pages.RadioButtonPage radioButtonPage;
