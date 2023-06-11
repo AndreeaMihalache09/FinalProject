@@ -1,5 +1,4 @@
 package pages;
-import com.google.common.collect.Table;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

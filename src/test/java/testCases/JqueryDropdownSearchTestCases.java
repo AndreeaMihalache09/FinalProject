@@ -1,14 +1,10 @@
 package testCases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.BasePage;
 import pages.JqueryDropdownSearchPage;
-
-import java.time.Duration;
 
 public class JqueryDropdownSearchTestCases extends BasePage {
     private pages.JqueryDropdownSearchPage jqueryDropdownSearchPage;
@@ -22,8 +18,8 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     //Drop Down with Search box
     @Test
-    public void SelectAustraliaInDropdownList() {
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+    public void SelectAustraliaInDropdownList() throws InterruptedException {
+        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnAustralia();
         WebElement CountryField = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/span/span[1]/span/span[1]"));
@@ -32,7 +28,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectBangladeshInDropdownList() {
+    public void SelectBangladeshInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnBangladesh();
@@ -42,7 +38,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectDenmarkInDropdownList() {
+    public void SelectDenmarkInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnDenmark();
@@ -52,7 +48,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectHongKongInDropdownList() {
+    public void SelectHongKongInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnHongKong();
@@ -62,7 +58,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectIndiaInDropdownList() {
+    public void SelectIndiaInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnIndia();
@@ -72,7 +68,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectJapanInDropdownList() {
+    public void SelectJapanInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnJapan();
@@ -82,7 +78,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectNewZealandInDropdownList() {
+    public void SelectNewZealandInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnNewZealand();
@@ -92,7 +88,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectSouthAfricaInDropdownList() {
+    public void SelectSouthAfricaInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnSouthAfrica();
@@ -102,7 +98,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectUnitedStatesOfAmericaInDropdownList() {
+    public void SelectUnitedStatesOfAmericaInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectCountryDropdownList();
         jqueryDropdownSearchPage.ClickOnUnitedStatesOfAmerica();
@@ -113,7 +109,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     //Multi Select - Search and Select multiple states
     @Test
-    public void SelectNothingInSelectStateField() {
+    public void SelectNothingInSelectStateField() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         WebElement TextDisplayed = driver.findElement(By.xpath("//input[@class='select2-search__field' and @placeholder='Select state(s)']\n"));
         Assert.assertTrue(TextDisplayed.isDisplayed());
@@ -121,7 +117,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectOnlyOneValueInSelectStateField() {
+    public void SelectOnlyOneValueInSelectStateField() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectStateField();
         jqueryDropdownSearchPage.ClickAlabamaInSelectStateField();
@@ -131,7 +127,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectTwoValuesInSelectStateField() {
+    public void SelectTwoValuesInSelectStateField() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectStateField();
         jqueryDropdownSearchPage.ClickAlabamaInSelectStateField();
@@ -146,7 +142,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectThreeValuesInSelectStateField() {
+    public void SelectThreeValuesInSelectStateField() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectStateField();
         jqueryDropdownSearchPage.ClickAlabamaInSelectStateField();
@@ -167,7 +163,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     //Drop Down with Disabled values
     @Test
-    public void NoSelectAnyValue() {
+    public void NoSelectAnyValue() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         WebElement SelectBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[3]/div[2]/span/span[1]/span/span[1]"));
         String TextDisplayed = SelectBox.getText();
@@ -175,7 +171,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectAmericanSamoaValue() {
+    public void SelectAmericanSamoaValue() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectionArrow();
         jqueryDropdownSearchPage.ClickOnAmericanSamoaValue();
@@ -185,7 +181,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckGuamDisabledValue() {
+    public void CheckGuamDisabledValue() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectionArrow();
         WebElement UnableButton = driver.findElement(By.xpath("/html/body/span/span/span[2]/ul/li[3]"));
@@ -194,7 +190,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectNorthernMarianaIslandsValue() {
+    public void SelectNorthernMarianaIslandsValue() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectionArrow();
         jqueryDropdownSearchPage.ClickOnNorthernMarianaIslandsValue();
@@ -204,7 +200,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckUnitedStatesMinorOutlyingIslandsDisabledValue() {
+    public void CheckUnitedStatesMinorOutlyingIslandsDisabledValue() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectionArrow();
         WebElement UnableButton = driver.findElement(By.xpath("/html/body/span/span/span[2]/ul/li[5]"));
@@ -213,7 +209,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectVirginIslandsValue() {
+    public void SelectVirginIslandsValue() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnSelectionArrow();
         jqueryDropdownSearchPage.ClickOnVirginIslandsValue();
@@ -224,7 +220,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     //Drop-down with Category related options
     @Test
-    public void SelectNoOptionInDropdownList() {
+    public void SelectNoOptionInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         WebElement Text = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[4]/div[2]/select"));
         String TextDisplayed = (Text.getText());
@@ -232,7 +228,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectOption2InDropdownList() {
+    public void SelectOption2InDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
         jqueryDropdownSearchPage.SelectAnOption("P");
@@ -244,7 +240,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
     }
 
     @Test
-    public void SelectOption3InDropdownList() {
+    public void SelectOption3InDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
         jqueryDropdownSearchPage.SelectAnOption("R");
@@ -255,7 +251,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     }
     @Test
-    public void SelectOption4InDropdownList() {
+    public void SelectOption4InDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
         jqueryDropdownSearchPage.SelectAnOption("C");
@@ -266,7 +262,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     }
     @Test
-    public void SelectOption5InDropdownList() {
+    public void SelectOption5InDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
         jqueryDropdownSearchPage.SelectAnOption("J");
@@ -277,7 +273,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     }
     @Test
-    public void SelectOption6InDropdownList() {
+    public void SelectOption6InDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
         jqueryDropdownSearchPage.SelectAnOption(".");
@@ -288,7 +284,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     }
     @Test
-    public void SelectOption7InDropdownList() {
+    public void SelectOption7InDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
         jqueryDropdownSearchPage.SelectAnOption("U");
@@ -299,7 +295,7 @@ public class JqueryDropdownSearchTestCases extends BasePage {
 
     }
     @Test
-    public void SelectOption8InDropdownList() {
+    public void SelectOption8InDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jqueryDropdownSearchPage.ClickOnOtherFileDropdown();
         jqueryDropdownSearchPage.SelectAnOption("O");

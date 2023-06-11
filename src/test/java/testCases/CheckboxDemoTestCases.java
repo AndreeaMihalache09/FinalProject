@@ -28,17 +28,27 @@ public class CheckboxDemoTestCases extends BasePage {
     public void ClickOnTheSingleCheckboxButton() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
         CheckboxDemoPage.clickOnSingleCheckBox();
-        WebElement checkboxMessage = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/div[2]"));
+        WebElement checkboxMessage = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[1]/div[2]/div[2]"));
         String messageText = checkboxMessage.getText();
-        Assert.assertTrue(messageText.contains("Success - Check box is checked"));
+        Assert.assertTrue(messageText.contains("Checked"));
     }
+
     @Test
-    public void VerifyIfCheckAllButtonChangeToUncheckAllButton() throws InterruptedException {
+    public void VerifyIfCheckAllButtonChangesToUncheckAllButton() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
         CheckboxDemoPage.clickOnCheckAllButton();
-        WebElement UncheckAllButtons = driver.findElement(By.xpath("//input[@value='uncheck all']"));
+        WebElement UncheckAllButtons = driver.findElement(By.xpath("//input[@id='box' and @value='Uncheck All']"));
         Assert.assertEquals(true, UncheckAllButtons.isDisplayed());
     }
 
+    @Test
+    public void VerifyIfUnCheckAllButtonChangesToCheckAllButton() throws InterruptedException {
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
+        CheckboxDemoPage.clickOnCheckAllButton();
+        CheckboxDemoPage.clickOnCheckAllButton();
+        WebElement CheckAllButtons = driver.findElement(By.xpath("//input[@id='box' and @value='Check All']"));
+        Assert.assertEquals(true, CheckAllButtons.isDisplayed());
 
+
+    }
 }

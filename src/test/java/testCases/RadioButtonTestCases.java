@@ -18,7 +18,7 @@ public class RadioButtonTestCases extends BasePage {
     public void ClickOnGetCheckedValueButtonWithoutClickAnyValue() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickOnGetCheckedValueButton();
-        WebElement resultValue = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/p[2]"));
+        WebElement resultValue = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[1]/div/p[2]"));
         String result = resultValue.getText();
         Assert.assertTrue(result.contains("Radio button is Not checked"));
     }
@@ -28,7 +28,7 @@ public class RadioButtonTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickMaleValue();
         radioButtonPage.ClickOnGetCheckedValueButton();
-        WebElement resultValue = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/p[2]"));
+        WebElement resultValue = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[1]/div/p[2]"));
         String result = resultValue.getText();
         Assert.assertTrue(result.contains("Radio button 'Male' is checked"));
 
@@ -39,17 +39,17 @@ public class RadioButtonTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickFemaleValue();
         radioButtonPage.ClickOnGetCheckedValueButton();
-        WebElement resultValue = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/p[2]"));
+        WebElement resultValue = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[1]/div/p[2]"));
         String result = resultValue.getText();
         Assert.assertTrue(result.contains("Radio button 'Female' is checked"));
     }
 
     @Test
-    public void ClickOnGetValueButtonWithoutGenderAndAge() throws InterruptedException {
+    public void ClickOnGetValueButtonWithoutSelectGenderAndAge() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         Assert.assertFalse(Gender.isDisplayed());
         Assert.assertFalse((Age.isDisplayed()));
     }
@@ -60,9 +60,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnMaleGender();
         radioButtonPage.ClickOnFirstAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Male"));
         Assert.assertTrue((Age1.contains("0 - 5")));
@@ -74,9 +74,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnMaleGender();
         radioButtonPage.ClickOnSecondAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Male"));
         Assert.assertTrue((Age1.contains("5 - 15")));
@@ -89,9 +89,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnMaleGender();
         radioButtonPage.ClickOnThirdAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Male"));
         Assert.assertTrue((Age1.contains("15 - 50")));
@@ -104,9 +104,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnFemaleGender();
         radioButtonPage.ClickOnFirstAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Female"));
         Assert.assertTrue((Age1.contains("0 - 5")));
@@ -118,9 +118,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnFemaleGender();
         radioButtonPage.ClickOnSecondAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Female"));
         Assert.assertTrue((Age1.contains("5 - 15")));
@@ -133,9 +133,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnFemaleGender();
         radioButtonPage.ClickOnThirdAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Female"));
         Assert.assertTrue((Age1.contains("15 - 50")));
@@ -147,9 +147,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnOtherGender();
         radioButtonPage.ClickOnFirstAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Other"));
         Assert.assertTrue((Age1.contains("0 - 5")));
@@ -161,9 +161,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnOtherGender();
         radioButtonPage.ClickOnSecondAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Other"));
         Assert.assertTrue((Age1.contains("5 - 15")));
@@ -175,9 +175,9 @@ public class RadioButtonTestCases extends BasePage {
         radioButtonPage.ClickOnOtherGender();
         radioButtonPage.ClickOnThirdAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue(Gender1.contains("Other"));
         Assert.assertTrue((Age1.contains("15 - 50")));
@@ -188,7 +188,7 @@ public class RadioButtonTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickOnMaleGender();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
         Assert.assertTrue(Gender1.contains("Male"));
     }
@@ -198,7 +198,7 @@ public class RadioButtonTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickOnFemaleGender();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
         Assert.assertTrue(Gender1.contains("Female"));
     }
@@ -208,7 +208,7 @@ public class RadioButtonTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickOnOtherGender();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[1]/span"));
+        WebElement Gender = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[1]/span"));
         String Gender1 = Gender.getText();
         Assert.assertTrue(Gender1.contains("Other"));
     }
@@ -218,7 +218,7 @@ public class RadioButtonTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickOnFirstAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue((Age1.contains("0 - 5")));
     }
@@ -228,7 +228,7 @@ public class RadioButtonTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickOnSecondAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue((Age1.contains("5 - 15")));
     }
@@ -238,7 +238,7 @@ public class RadioButtonTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonPage.ClickOnThirdAgeGroup();
         radioButtonPage.ClickOnGetValuesButton();
-        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/p[2]/span"));
+        WebElement Age = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[3]/div/div/div[2]/p[2]/span"));
         String Age1 = Age.getText();
         Assert.assertTrue((Age1.contains("15 - 50")));
     }

@@ -4,8 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.BasePage;
-import pages.CheckboxDemoPage;
-import pages.RadioButtonPage;
 import pages.SelectDropdownListPage;
 public class SelectDropdownListTestCases extends BasePage {
     private pages.SelectDropdownListPage selectDropdownListPage;
@@ -17,8 +15,8 @@ public class SelectDropdownListTestCases extends BasePage {
     }
 
     @Test
-    public void SelectSundayInDropdownList() {
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
+    public void SelectSundayInDropdownList() throws InterruptedException {
+        driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSelectADayDropdownList();
         selectDropdownListPage.selectDayByValue("Sunday");
         WebElement Message = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/p[2]"));
@@ -27,7 +25,7 @@ public class SelectDropdownListTestCases extends BasePage {
     }
 
     @Test
-    public void SelectMondayInDropdownList() {
+    public void SelectMondayInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSelectADayDropdownList();
         selectDropdownListPage.selectDayByValue("Monday");
@@ -37,7 +35,7 @@ public class SelectDropdownListTestCases extends BasePage {
     }
 
     @Test
-    public void SelectTuesdayInDropdownList() {
+    public void SelectTuesdayInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSelectADayDropdownList();
         selectDropdownListPage.selectDayByValue("Tuesday");
@@ -47,7 +45,7 @@ public class SelectDropdownListTestCases extends BasePage {
     }
 
     @Test
-    public void SelectWednesdayInDropdownList() {
+    public void SelectWednesdayInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSelectADayDropdownList();
         selectDropdownListPage.selectDayByValue("Wednesday");
@@ -57,7 +55,7 @@ public class SelectDropdownListTestCases extends BasePage {
     }
 
     @Test
-    public void SelectThursdayInDropdownList() {
+    public void SelectThursdayInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSelectADayDropdownList();
         selectDropdownListPage.selectDayByValue("Thursday");
@@ -66,7 +64,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(MessageDisplayed.contains("Day selected :- Thursday"));
     }
     @Test
-    public void SelectFridayInDropdownList() {
+    public void SelectFridayInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSelectADayDropdownList();
         selectDropdownListPage.selectDayByValue("Friday");
@@ -75,7 +73,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(MessageDisplayed.contains("Day selected :- Friday"));
     }
     @Test
-    public void SelectSaturdayInDropdownList() {
+    public void SelectSaturdayInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSelectADayDropdownList();
         selectDropdownListPage.selectDayByValue("Saturday");
@@ -84,13 +82,13 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(MessageDisplayed.contains("Day selected :- Saturday"));
     }
     @Test
-    public void NoDaySelectedInDropdownList() {
+    public void NoDaySelectedInDropdownList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         WebElement Message = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/p[2]"));
         Assert.assertFalse(Message.isDisplayed());
 }
     @Test
-    public void SelectFirstValueAndClickFirstSelectedButtonInMultiSelectList(){
+    public void SelectFirstValueAndClickFirstSelectedButtonInMultiSelectList() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnFirstValue();
         selectDropdownListPage.ClickOnFirstSelectedButton();
@@ -99,7 +97,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(result1Displayed.contains("First selected option is : California"));
     }
     @Test
-    public void SelectSecondValueAndClickFirstSelectedButtonInMultiSelectList(){
+    public void SelectSecondValueAndClickFirstSelectedButtonInMultiSelectList ()throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSecondValue();
         selectDropdownListPage.ClickOnFirstSelectedButton();
@@ -108,7 +106,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(result1Displayed.contains("First selected option is : Florida"));
     }
     @Test
-    public void SelectThirdValueAndClickFirstSelectedButtonInMultiSelectList(){
+    public void SelectThirdValueAndClickFirstSelectedButtonInMultiSelectList() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnThirdValue();
         selectDropdownListPage.ClickOnFirstSelectedButton();
@@ -117,7 +115,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(result1Displayed.contains("First selected option is : New Jersey"));
     }
     @Test
-    public void SelectForthValueAndClickFirstSelectedButtonInMultiSelectList() {
+    public void SelectForthValueAndClickFirstSelectedButtonInMultiSelectList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnForthValue();
         selectDropdownListPage.ClickOnFirstSelectedButton();
@@ -126,7 +124,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(result1Displayed.contains("First selected option is : New York"));
     }
     @Test
-    public void SelectFifthValueAndClickFirstSelectedButtonInMultiSelectList() {
+    public void SelectFifthValueAndClickFirstSelectedButtonInMultiSelectList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnFifthValue();
         selectDropdownListPage.ClickOnFirstSelectedButton();
@@ -135,7 +133,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(result1Displayed.contains("First selected option is : Ohio"));
     }
     @Test
-    public void SelectSixthValueAndClickFirstSelectedButtonInMultiSelectList() {
+    public void SelectSixthValueAndClickFirstSelectedButtonInMultiSelectList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSixthValue();
         selectDropdownListPage.ClickOnFirstSelectedButton();
@@ -144,7 +142,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(result1Displayed.contains("First selected option is : Texas"));
     }
     @Test
-    public void SelectSeventhValueAndClickFirstSelectedButtonInMultiSelectList() {
+    public void SelectSeventhValueAndClickFirstSelectedButtonInMultiSelectList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnSeventhValue();
         selectDropdownListPage.ClickOnFirstSelectedButton();
@@ -153,7 +151,7 @@ public class SelectDropdownListTestCases extends BasePage {
         Assert.assertTrue(result1Displayed.contains("First selected option is : Pennsylvania"));
     }
     @Test
-    public void SelectEighthValueAndClickFirstSelectedButtonInMultiSelectList() {
+    public void SelectEighthValueAndClickFirstSelectedButtonInMultiSelectList() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[1]/div[1]/ul/li[4]/a")).click();
         selectDropdownListPage.ClickOnEighthValue();
         selectDropdownListPage.ClickOnFirstSelectedButton();

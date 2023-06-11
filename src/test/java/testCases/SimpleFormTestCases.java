@@ -62,7 +62,10 @@ public class SimpleFormTestCases extends BasePage {
         simpleFormPage.selectTwoFieldsEnterA("1");
         simpleFormPage.selectTwoFieldsEnterB("3");
         simpleFormPage.clickGetValuesButton();
-        Assert.assertTrue(driver.getPageSource().contains("4"));
+        WebElement result = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[2]/div[2]/div/div[2]/div/p"));
+        String resultDisplayed = result.getText();
+        Assert.assertTrue(resultDisplayed.contains("4"));
+
     }
 
     @Test
@@ -71,7 +74,7 @@ public class SimpleFormTestCases extends BasePage {
         simpleFormPage.selectTwoFieldsEnterA("1");
         simpleFormPage.selectTwoFieldsEnterB("dog");
         simpleFormPage.clickGetValuesButton();
-        Assert.assertTrue(driver.getPageSource().contains("NaN"));
+        Assert.assertTrue(driver.getPageSource().contains("Entered value is not a number"));
 
     }
 
@@ -81,7 +84,7 @@ public class SimpleFormTestCases extends BasePage {
         simpleFormPage.selectTwoFieldsEnterA("cat");
         simpleFormPage.selectTwoFieldsEnterB("dog");
         simpleFormPage.clickGetValuesButton();
-        Assert.assertTrue(driver.getPageSource().contains("NaN"));
+        Assert.assertTrue(driver.getPageSource().contains("Entered value is not a number"));
     }
 
     @Test
@@ -90,7 +93,7 @@ public class SimpleFormTestCases extends BasePage {
         simpleFormPage.selectTwoFieldsEnterA("+*/)-");
         simpleFormPage.selectTwoFieldsEnterB("*/./*");
         simpleFormPage.clickGetValuesButton();
-        Assert.assertTrue(driver.getPageSource().contains("NaN"));
+        Assert.assertTrue(driver.getPageSource().contains("Entered value is not a number"));
 
     }
     @Test
@@ -99,7 +102,7 @@ public class SimpleFormTestCases extends BasePage {
         simpleFormPage.selectTwoFieldsEnterA("45");
         simpleFormPage.selectTwoFieldsEnterB("14");
         simpleFormPage.clickGetValuesButton();
-        WebElement Sum = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[2]/div/p"));
+        WebElement Sum = driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[2]/div[2]/div/div[2]/div/p"));
         String SumResult = Sum.getText();
         Assert.assertTrue(SumResult.contains("59"));
 

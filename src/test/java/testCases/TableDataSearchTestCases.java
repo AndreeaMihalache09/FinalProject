@@ -16,7 +16,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckInProgressStatusFilter() {
+    public void CheckInProgressStatusFilter() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("in progress");
         WebElement Row1 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
@@ -31,7 +31,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckCompletedStatusFilter() {
+    public void CheckCompletedStatusFilter() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("completed");
         WebElement Row2 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[2]"));
@@ -41,7 +41,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckDeployedStatusFilter() {
+    public void CheckDeployedStatusFilter() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("deployed");
         WebElement Row5 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[5]"));
@@ -50,7 +50,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckFilterByAssigneeJohn() {
+    public void CheckFilterByAssigneeJohn() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("John");
         WebElement DisplayedRow1 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
@@ -62,7 +62,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckFilterByAssigneeJohnSmith() {
+    public void CheckFilterByAssigneeJohnSmith() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("John Smith");
         WebElement DisplayedRow1 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
@@ -72,7 +72,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckFilterByAssigneeEmilyJohn() {
+    public void CheckFilterByAssigneeEmilyJohn()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("Emily John");
         WebElement DisplayedRow4 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[4]"));
@@ -81,7 +81,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckFilterByAssigneeTrout() {
+    public void CheckFilterByAssigneeTrout() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("Trout");
         WebElement DisplayedRow2 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[2]"));
@@ -93,7 +93,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckFilterByAssigneeMikeTrout() {
+    public void CheckFilterByAssigneeMikeTrout() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("Mike Trout");
         WebElement DisplayedRow2 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[2]"));
@@ -103,7 +103,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckFilterByAssigneeKilgoreTrout() {
+    public void CheckFilterByAssigneeKilgoreTrout() throws InterruptedException  {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("Kilgore Trout");
         WebElement DisplayedRow7 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[7]"));
@@ -112,7 +112,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckFilterByTaskWireframes() {
+    public void CheckFilterByTaskWireframes()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("Wireframes");
         WebElement DisplayedRow1 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
@@ -121,7 +121,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteANumberGraterThanTheNumberOfRowsInTheTableInTheFilterField() {
+    public void WriteANumberGraterThanTheNumberOfRowsInTheTableInTheFilterField() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("458");
         WebElement RowsDisplayed = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
@@ -129,7 +129,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void Write0InTheTableInTheFilterField() {
+    public void Write0InTheTableInTheFilterField() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("0");
         WebElement RowsDisplayed = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
@@ -137,7 +137,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteSpecialCharactersInTheFilterField() {
+    public void WriteSpecialCharactersInTheFilterField()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.WriteFilterInput("/*-?");
         WebElement RowsDisplayed = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
@@ -145,7 +145,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteNothingInFilterField() {
+    public void WriteNothingInFilterField()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         WebElement Row1 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
         WebElement Row2 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]"));
@@ -165,7 +165,7 @@ public class  TableDataSearchTestCases extends BasePage {
 
     //Listed Users
     @Test
-    public void CheckIfTheNumberInputFieldIsDisabled() {
+    public void CheckIfTheNumberInputFieldIsDisabled() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         WebElement NumberInputFieldUnable = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div/div[2]/table/thead/tr"));
         boolean NumberInputFieldDisabled = !NumberInputFieldUnable.isEnabled();
@@ -181,7 +181,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIfTheFirstNameInputFieldIsDisabled() {
+    public void CheckIfTheFirstNameInputFieldIsDisabled()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         WebElement FirstNameInputFieldUnable = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div/div[2]/table/thead/tr/th[3]"));
         boolean FirstNameInputFieldDisabled = !FirstNameInputFieldUnable.isEnabled();
@@ -189,7 +189,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIfTheLastNameInputFieldIsDisabled() {
+    public void CheckIfTheLastNameInputFieldIsDisabled() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         WebElement ForthUnableField = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div/div[2]/table/thead/tr/th[3]"));
         boolean ForthFieldDisabled = !ForthUnableField.isEnabled();
@@ -198,7 +198,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIfTheNumberInputFieldIsEnabledAfterClickFilterButton() {
+    public void CheckIfTheNumberInputFieldIsEnabledAfterClickFilterButton() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         WebElement NumberInputField = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div/div[2]/table/thead/tr/th[1]"));
@@ -215,7 +215,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIfTheFirstNameInputFieldIsEnabledAfterClickFilterButton() {
+    public void CheckIfTheFirstNameInputFieldIsEnabledAfterClickFilterButton() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         WebElement FirstNameInputField = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div/div[2]/table/thead/tr/th[3]"));
@@ -223,7 +223,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIfTheLastNameInputFieldIsEnabledAfterClickFilterButton() {
+    public void CheckIfTheLastNameInputFieldIsEnabledAfterClickFilterButton() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         WebElement FourthField = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[2]/div/div[2]/table/thead/tr/th[4]"));
@@ -231,7 +231,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void Write0InTheNumberInputField() {
+    public void Write0InTheNumberInputField()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInTheNumberInputField("0");
@@ -241,7 +241,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteANumberGraterThanTheNumberOfRowsInTheTableInTheNumberInputField() {
+    public void WriteANumberGraterThanTheNumberOfRowsInTheTableInTheNumberInputField()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInTheNumberInputField("74");
@@ -251,7 +251,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteLettersInTheNumberInputField() {
+    public void WriteLettersInTheNumberInputField() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInTheNumberInputField("xcv");
@@ -261,7 +261,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteSpecialCharactersInTheNumberInputField() {
+    public void WriteSpecialCharactersInTheNumberInputField()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInTheNumberInputField("/*/?");
@@ -271,7 +271,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteANumberInTheUsernameInputField() {
+    public void WriteANumberInTheUsernameInputField() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInUsernameInputField("51");
@@ -281,7 +281,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteASpecialCharactersInTheUsernameInputField() {
+    public void WriteASpecialCharactersInTheUsernameInputField() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInUsernameInputField("/*-?");
@@ -304,7 +304,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteAnUsernameWhichIsNotInTheTableInTheUsernameInputField() {
+    public void WriteAnUsernameWhichIsNotInTheTableInTheUsernameInputField()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInUsernameInputField("Test123");
@@ -314,7 +314,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIfAnUserWhichExistsInTheTableAppearsWhenItIsWrittenInTheUsernameInputField() {
+    public void CheckIfAnUserWhichExistsInTheTableAppearsWhenItIsWrittenInTheUsernameInputField()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInUsernameInputField("Wireframes");
@@ -325,7 +325,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteANumberInTheFirstNameInputField() {
+    public void WriteANumberInTheFirstNameInputField() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInTheFirstNameInputField("1");
@@ -335,7 +335,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteASpecialCharactersInTheFirstNameInputField() {
+    public void WriteASpecialCharactersInTheFirstNameInputField() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInTheFirstNameInputField("/*-?");
@@ -346,7 +346,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteALetterInTheFirstNameInputField() {
+    public void WriteALetterInTheFirstNameInputField() throws InterruptedException{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInTheFirstNameInputField("K");
@@ -357,7 +357,7 @@ public class  TableDataSearchTestCases extends BasePage {
     }
 
     @Test
-    public void WriteAFirstNameWhichExistsInTheTableInputField() {
+    public void WriteAFirstNameWhichExistsInTheTableInputField()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[2]/a")).click();
         tableDataSearchPage.ClickOnFilterButton();
         tableDataSearchPage.WriteInTheFirstNameInputField("Jane");

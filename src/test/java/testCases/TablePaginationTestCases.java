@@ -16,7 +16,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void SelectNoOptionInDropdownList() {
+    public void SelectNoOptionInDropdownList()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         WebElement DropownListTextBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/select"));
         String TextDysplayed = DropownListTextBox.getText();
@@ -24,7 +24,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIfAllRowsAppearAfterSelectShowALLRowsOption() {
+    public void CheckIfAllRowsAppearAfterSelectShowALLRowsOption() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         tablePaginationPage.SelectAnOptionInDropdownList("s");
         WebElement DropownListTextBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/select"));
@@ -35,7 +35,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIf10RowsAppearAfterSelect10RowsOption() {
+    public void CheckIf10RowsAppearAfterSelect10RowsOption()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         tablePaginationPage.SelectAnOptionInDropdownList("10");
         WebElement DropownListTextBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/select"));
@@ -46,7 +46,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIf15RowsAppearAfterSelect15RowsOption() {
+    public void CheckIf15RowsAppearAfterSelect15RowsOption()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         tablePaginationPage.SelectAnOptionInDropdownList("15");
         WebElement DropownListTextBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/select"));
@@ -57,7 +57,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIf30RowsAppearAfterSelect30RowsOption() {
+    public void CheckIf30RowsAppearAfterSelect30RowsOption()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         tablePaginationPage.SelectAnOptionInDropdownList("30");
         WebElement DropownListTextBox = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/div[1]/select"));
@@ -68,7 +68,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void CheckIfAllPagesOfTheTableContainTheSelectedNumberOfRows() {
+    public void CheckIfAllPagesOfTheTableContainTheSelectedNumberOfRows()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         tablePaginationPage.ClickPage1();
         WebElement LastRowPage1 = driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div[2]/table/tbody/tr[5]/td[1]"));
@@ -97,7 +97,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void Select10InDropdownListAndCheckIfAllPagesOfTheTableContain10Rows() {
+    public void Select10InDropdownListAndCheckIfAllPagesOfTheTableContain10Rows()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         tablePaginationPage.SelectAnOptionInDropdownList("10");
         tablePaginationPage.ClickPage1();
@@ -115,7 +115,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void Select15InDropdownListAndCheckIfAllPagesOfTheTableContain15Rows() {
+    public void Select15InDropdownListAndCheckIfAllPagesOfTheTableContain15Rows() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         tablePaginationPage.SelectAnOptionInDropdownList("15");
         tablePaginationPage.ClickPage1();
@@ -129,7 +129,7 @@ public class TablePaginationTestCases extends BasePage {
     }
 
     @Test
-    public void Select20InDropdownListAndCheckIfAllPagesOfTheTableContain20Rows() {
+    public void Select20InDropdownListAndCheckIfAllPagesOfTheTableContain20Rows()throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[2]/div/div/div[3]/div[1]/ul/li[1]/a")).click();
         tablePaginationPage.SelectAnOptionInDropdownList("20");
         tablePaginationPage.ClickPage1();
